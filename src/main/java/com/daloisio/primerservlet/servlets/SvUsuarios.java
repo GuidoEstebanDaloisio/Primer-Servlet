@@ -17,7 +17,7 @@ import logica.Usuario;
 
 @WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
 public class SvUsuarios extends HttpServlet {
-    Controladora control = new Controladora();
+    
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -28,6 +28,7 @@ public class SvUsuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Controladora control = new Controladora();
 
         List<Usuario> listaUsuarios = new ArrayList<>();
         
@@ -43,6 +44,8 @@ public class SvUsuarios extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Controladora control = new Controladora();
+        
         String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
